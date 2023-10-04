@@ -10,24 +10,24 @@ public class DBVacia implements IDBConnection
 {
     public DBVacia()
     {
-        initDatabase("a");
+        initDatabase("");
     }
     
     @Override
     public void initDatabase(String sqlCommand) 
     {
-        System.out.println("Vacia:");
+        System.out.println("No se puede crear una tabla vacía");
     }
 
     @Override
     public void connectDatabase() 
     {
-        System.out.println("Conectando a la tabla Vacia");
+        System.out.println("tabla Vacia");
     }
 
     @Override
     public void disconnectDatabase() 
     {
-        System.out.println("Desonectando la tabla Vacia");
+        System.out.println("tabla Vacia");
     }
 }

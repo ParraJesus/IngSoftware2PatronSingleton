@@ -21,7 +21,7 @@ public class LabIngSoft2Singleton {
         
         //DBConnection conn3 = new DBConnection(); //Esta línea da error
         
-        //DBConnection conn3 = DBConnection.getInstance(); //Esta linea no devuelve error
+        //DBConnection conn3 = DBConnection.getInstance(); //Esta linea no devuelve error, porque trae la única instancia
     }
     
 }

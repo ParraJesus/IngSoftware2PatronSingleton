@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package FactoryImplementation;
 
+import Access.Repository;
 import FactoryInterface.IDBConnection;
 
 /**
@@ -12,28 +9,38 @@ import FactoryInterface.IDBConnection;
  */
 public class DBNomina implements IDBConnection
 {
+    private Repository repos = new Repository();
 
     public DBNomina() 
     {
-        initDatabase("a");
     }
     
     @Override
     public void initDatabase(String sqlCommand) 
     {
         System.out.println("Nomina:");
+        
+        String sql = "CREATE TABLE IF NOT EXISTS nomina (\n"
+                + "	id integer PRIMARY KEY AUTOINCREMENT,\n"
+                + "	name text NOT NULL,\n"
+                + "	description text NULL\n"
+                + ");";
+        
+        repos.initDatabase(sql);
     }
 
     @Override
     public void connectDatabase() 
     {
         System.out.println("Conectando a la tabla nomina");
+        repos.connectDatabase();
     }
 
     @Override
     public void disconnectDatabase() 
     {
         System.out.println("Desonectando la tabla nomina");
+        repos.disconnectDatabase();
     }
     
 }
